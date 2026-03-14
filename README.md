@@ -1,95 +1,104 @@
-Perceptron vs Logistic Regression – Decision Boundary Visualization
+# **Perceptron vs Logistic Regression – Decision Boundary Visualization**
 
-This project demonstrates how different classification approaches create decision boundaries for a binary classification dataset.
+This project demonstrates how different classification approaches create **decision boundaries** for a binary classification dataset.
 
 The experiment compares three methods:
 
-Perceptron using Step Function
+- Perceptron using **Step Function**
+- Logistic Regression using Scikit-learn
+- Perceptron using **Sigmoid Function**
 
-Logistic Regression from Scikit-learn
+All models are trained on the same dataset and their **decision boundaries are visualized together**.
 
-Perceptron using Sigmoid Function
+---
 
-All models are trained on the same dataset and their decision boundaries are visualized together.
+## **Dataset**
 
-Dataset
-
-A synthetic dataset is generated using make_classification() from Scikit-learn.
+A synthetic dataset is generated using `make_classification()` from Scikit-learn.
 
 Dataset configuration:
 
-100 samples
+- 100 samples
+- 2 input features
+- Binary classification
+- Large class separation for clear visualization
 
-2 input features
+The dataset is visualized using Matplotlib where each point represents a data sample and colors represent class labels.
 
-Binary classes
+---
 
-High class separation for clear visualization
+## **Models Implemented**
 
-The dataset is visualized using Matplotlib where each point represents a sample and colors represent the class labels.
+### **1. Perceptron using Step Function**
 
-Models Implemented
-1. Perceptron using Step Function
-
-A perceptron is implemented from scratch using a step activation function.
+A perceptron is implemented from scratch using a **step activation function**.
 
 Prediction rule:
 
-if z > 0 → class 1  
+
+if z > 0 → class 1
 else → class 0
+
 
 Weights are updated using the perceptron learning rule:
 
+
 w = w + lr * (y − y_hat) * x
 
-This approach produces a hard classification boundary.
 
-2. Logistic Regression
+---
 
-A logistic regression model from Scikit-learn is trained on the same dataset.
+### **2. Logistic Regression**
 
-Logistic regression uses the sigmoid function internally to estimate probabilities and learns the optimal decision boundary using optimization.
+A Logistic Regression model from Scikit-learn is trained on the same dataset.
 
-The learned coefficients and intercept are used to plot the decision boundary.
+Logistic regression uses the **sigmoid function internally** to estimate probabilities and learn the optimal decision boundary.
 
-3. Perceptron using Sigmoid Function
+The learned coefficients and intercept are then used to plot the decision boundary.
 
-In this experiment, the perceptron is modified to use a sigmoid activation function instead of a step function.
+---
+
+### **3. Perceptron using Sigmoid Function**
+
+In this experiment, the perceptron is modified to use a **sigmoid activation function** instead of a step function.
 
 Sigmoid function:
 
+
 σ(z) = 1 / (1 + e^(-z))
 
-Unlike the step function, the sigmoid outputs probabilities between 0 and 1, which makes the learning smoother.
 
-Visualization
+Unlike the step function, the sigmoid produces **probability values between 0 and 1**, which makes learning smoother.
 
-The final graph displays the dataset and the decision boundaries of all three approaches:
+---
 
-Red line → Perceptron with Step Function
+## **Visualization**
 
-Black line → Logistic Regression
+The final plot compares the decision boundaries of all three methods:
 
-Yellow line → Perceptron with Sigmoid Function
+- **Red line** → Perceptron with Step Function  
+- **Black line** → Logistic Regression  
+- **Yellow line** → Perceptron with Sigmoid Function  
 
-This helps visually compare how each method separates the data.
+This helps visually understand how each model separates the data.
 
-Libraries Used
+---
 
-NumPy
+## **Libraries Used**
 
-Matplotlib
+- NumPy  
+- Matplotlib  
+- Scikit-learn  
 
-Scikit-learn
+---
 
-Learning Outcome
+## **Learning Outcome**
 
 This project helps understand:
 
-How the Perceptron algorithm works
+- How the **Perceptron algorithm works**
+- Difference between **Step and Sigmoid activation functions**
+- How **Logistic Regression** finds a decision boundary
+- Visualization of **linear classification models**
 
-Difference between step and sigmoid activation functions
-
-How Logistic Regression finds a decision boundary
-
-Visualization of linear classifiers
+These concepts form the foundation for understanding **neural networks and deep learning**.
